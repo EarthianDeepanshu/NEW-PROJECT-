@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookCrafted – Professional Ghostwriting for Your Book</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #f9f9fb;
+      color: #222;
+    }
+    .hero {
+      background: linear-gradient(120deg, #5e60ce 0%, #48bfe3 100%);
+      color: #fff;
+      padding: 60px 20px 40px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+    .cta-btn {
+      background: #fff;
+      color: #5e60ce;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(94,96,206,0.10);
+      transition: background 0.2s, color 0.2s;
+    }
+    .cta-btn:hover {
+      background: #48bfe3;
+      color: #fff;
+    }
+    .section {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 36px 28px;
+      border-radius: 16px;
+      box-shadow: 0 2px 24px rgba(94,96,206,0.07);
+    }
+    .section h2 {
+      color: #5e60ce;
+      margin-bottom: 18px;
+      font-size: 2rem;
+    }
+    .services-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 22px 0;
+      font-size: 1.1rem;
+    }
+    .services-list li {
+      margin-bottom: 10px;
+      padding-left: 18px;
+      position: relative;
+    }
+    .services-list li:before {
+      content: '✔';
+      color: #48bfe3;
+      position: absolute;
+      left: 0;
+      font-size: 1.1rem;
+    }
+    .testimonials {
+      margin-top: 18px;
+      font-style: italic;
+      color: #444;
+      border-left: 4px solid #48bfe3;
+      padding-left: 18px;
+    }
+    .contact-form {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+    }
+    .contact-form button {
+      background: #5e60ce;
+      color: #fff;
+      border: none;
+      padding: 12px 0;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover {
+      background: #48bfe3;
+    }
+    footer {
+      text-align: center;
+      padding: 28px 0 12px 0;
+      color: #888;
+      font-size: 1rem;
+      background: none;
+    }
+    /* WhatsApp Button */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50px;
+      padding: 16px 24px 16px 56px;
+      font-size: 1.1rem;
+      font-family: inherit;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      text-decoration: none;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      transition: background 0.2s;
+    }
+    .whatsapp-btn:hover {
+      background-color: #128C7E;
+      color: #fff;
+    }
+    .whatsapp-btn img {
+      width:32px;
+      height:32px;
+      position:absolute;
+      left:16px;
+    }
+    @media (max-width: 600px) {
+      .section { padding: 18px 8px; }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .whatsapp-btn {
+        padding: 12px 18px 12px 44px;
+        font-size: 1rem;
+      }
+      .whatsapp-btn img {
+        width:24px;
+        height:24px;
+        left:10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>BookCrafted</h1>
+    <p>We Write Your Book. You Take the Credit.<br>
+      Professional ghostwriting for entrepreneurs, experts, and dreamers.</p>
+    <a href="#contact"><button class="cta-btn">Start Your Book Project</button></a>
+  </div>
+
+  <div class="section">
+    <h2>What We Offer</h2>
+    <ul class="services-list">
+      <li>Full-service book ghostwriting (fiction & nonfiction)</li>
+      <li>Personalized writing process to match your vision and voice</li>
+      <li>Editing, revisions, and formatting included</li>
+      <li>100% confidentiality – you own all rights</li>
+      <li>Guidance from idea to finished manuscript</li>
+    </ul>
+    <div class="testimonials">
+      “BookCrafted made my publishing dream a reality. The process was smooth, and the writing exceeded my expectations.”<br>
+      – Priya S., Author & Entrepreneur
+    </div>
+  </div>
+
+  <div class="section" id="contact">
+    <h2>Request a Free Consultation</h2>
+    <form class="contact-form" name="contact" method="POST" netlify>
+      <input type="text" name="name" placeholder="Your Name*" required>
+      <input type="email" name="email" placeholder="Your Email*" required>
+      <input type="text" name="bookTitle" placeholder="Book Title / Idea*" required>
+      <textarea name="details" rows="4" placeholder="Tell us about your book project*" required></textarea>
+      <button type="submit">Send Request</button>
+    </form>
+  </div>
+
+  <a href="https://wa.me/918950378717?text=Hii%20I%20want%20help%20to%20make%20my%20book" class="whatsapp-btn" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    Chat on WhatsApp
+  </a>
+
+  <footer>
+    &copy; 2025 BookCrafted. All rights reserved.
+  </footer>
+</body>
+</html>
