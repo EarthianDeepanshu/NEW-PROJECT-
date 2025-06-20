@@ -186,7 +186,12 @@
 
   <div class="section" id="contact">
     <h2>Request a Free Consultation</h2>
-    <form class="contact-form" name="contact" method="POST" netlify>
+    <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <!-- Netlify Hidden Inputs for Form Name and Honeypot -->
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display:none">
+        <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+      </p>
       <input type="text" name="name" placeholder="Your Name*" required>
       <input type="email" name="email" placeholder="Your Email*" required>
       <input type="text" name="bookTitle" placeholder="Book Title / Idea*" required>
