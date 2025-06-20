@@ -110,6 +110,17 @@
     .contact-form button:hover {
       background: #48bfe3;
     }
+    .thankyou-message {
+      display: none;
+      color: #5e60ce;
+      font-size: 1.3rem;
+      margin-top: 16px;
+      text-align: center;
+      background: #f4f7ff;
+      border-radius: 10px;
+      padding: 32px 12px;
+      box-shadow: 0 2px 12px rgba(94,96,206,0.04);
+    }
     footer {
       text-align: center;
       padding: 28px 0 12px 0;
@@ -186,8 +197,7 @@
 
   <div class="section" id="contact">
     <h2>Request a Free Consultation</h2>
-    <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <!-- Netlify Hidden Inputs for Form Name and Honeypot -->
+    <form id="contact-form" class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact">
       <p style="display:none">
         <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
@@ -198,6 +208,10 @@
       <textarea name="details" rows="4" placeholder="Tell us about your book project*" required></textarea>
       <button type="submit">Send Request</button>
     </form>
+    <div id="thankyou-message" class="thankyou-message">
+      Thank you for reaching out!<br>
+      We'll contact you soon.
+    </div>
   </div>
 
   <a href="https://wa.me/918950378717?text=Hii%20I%20want%20help%20to%20make%20my%20book" class="whatsapp-btn" target="_blank">
@@ -208,5 +222,28 @@
   <footer>
     &copy; 2025 BookCrafted. All rights reserved.
   </footer>
+
+  <script>
+    // Inline thank you after Netlify form submit
+    const form = document.getElementById('contact-form');
+    const thankYou = document.getElementById('thankyou-message');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        fetch("/", {
+          method: "POST",
+          body: data,
+        })
+        .then(() => {
+          form.style.display = 'none';
+          thankYou.style.display = 'block';
+        })
+        .catch((error) => {
+          alert("There was a problem submitting your form. Please try again!");
+        });
+      });
+    }
+  </script>
 </body>
 </html>
